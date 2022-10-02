@@ -10,43 +10,49 @@ namespace ejercicio1
     {
         static void Main(string[] args)
         {
-            //ejercicio 3
 
-            ejercicio3();
-            //------------
-        }
-
-
-        static void ejercicio3()
-        {
-            int p=0;
-            Console.WriteLine("Escribe cuantos numeron ingresaras: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Ingrese los numeros");
-            for(int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.Clear();
-            Array.Sort(arr);
-            Array.Reverse(arr);
-            Console.WriteLine("Numeros organizados de mayor a menor");
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i]+ ",");
-            }
-            for(int i=0; i < arr.Length; i++)
-            {
-                if (arr[i]%2==0)
-                {
-                    p += 1;
-                }
-            }
-            Console.WriteLine("hay " + p + " numeros pares en la cadena");
-
+            Controlmodelo a =new Controlmodelo();
+            a.getmodel();
             Console.ReadKey();
         }
 
+    }
+
+    class Controlmodelo
+    {
+        public Controlmodelo()
+        {
+            listacarro=new List<Car>();
+
+            listacarro.Add(new Car { Brand="BMW",Color="negro",Model=2020});
+            listacarro.Add(new Car { Brand="Dacia",Color="azul",Model=2000});
+            listacarro.Add(new Car { Brand="Infiniti",Color="verde",Model=2022});
+            listacarro.Add(new Car { Brand="Kia",Color="rojo",Model=2021});
+            listacarro.Add(new Car { Brand="Volkswagen",Color="morado",Model=2017});
+
+
+        }
+        public void getmodel()
+        {
+            IEnumerable<Car>modell=from model in listacarro where (2022-model.Model)<=5 select model;
+            foreach (Car model1 in modell)
+            {
+                model1.getdatos();
+            }
+        }
+
+        public List<Car> listacarro;
+    }
+
+     class Car
+    {
+        public string Brand {get;set;}
+	    public string Color {get;set;}
+        public int Model {get;set;}
+
+	    public void getdatos()
+        {
+            Console.WriteLine("Carro {0} de color {1} y modelo {2}",Brand,Color,Model);
+        }
     }
 }
