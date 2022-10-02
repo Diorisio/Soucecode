@@ -10,11 +10,9 @@ namespace ejercicio1
     {
         static void Main(string[] args)
         {
-            //ejercicio 1
-            Console.WriteLine("Escribe una frase");
-            String cadena = Console.ReadLine();
+            //ejercicio 3
 
-            ejercicio1(cadena);
+            ejercicio3();
             //------------
 
             //ejercicio 2
@@ -23,25 +21,35 @@ namespace ejercicio1
         }
 
 
-        static void ejercicio1(string cadena)
+        static void ejercicio3()
         {
-            if (cadena.Length < 20)
+            int p=0;
+            Console.WriteLine("Escribe cuantos numeron ingresaras: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[n];
+            Console.WriteLine("Ingrese los numeros");
+            for(int i = 0; i < arr.Length; i++)
             {
-                for (int i = 0; i < cadena.Length; i++)
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.Clear();
+            Array.Sort(arr);
+            Array.Reverse(arr);
+            Console.WriteLine("Numeros organizados de mayor a menor");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i]+ ",");
+            }
+            for(int i=0; i < arr.Length; i++)
+            {
+                if (arr[i]%2==0)
                 {
-                    Console.Write(cadena[i]);
+                    p += 1;
                 }
-                Console.Write("...");
+            }
+            Console.WriteLine("hay " + p + " numeros pares en la cadena");
 
-            }
-            else
-            {
-                for (int i = 0; i < 20; i++)
-                {
-                    Console.Write(cadena[i]);
-                }
-            }
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
         static void ejercicio2()
