@@ -9,11 +9,17 @@ namespace ejercicio1
     class Program
     {
         static void Main(string[] args)
-        {
+        {   //ejercicio1
+            Console.WriteLine("Escribe una frase");
+            String cadena = Console.ReadLine();
 
+            ejercicio1(cadena);
+            //-------------
+            //ejercicio 4
             Controlmodelo a =new Controlmodelo();
             a.getmodel();
             Console.ReadKey();
+            //-----------
             ejercicio3();
             //------------
 
