@@ -17,7 +17,7 @@ namespace ejercicio1
         }
 
 
-        static void ejercicio1(string cadena)
+        static void ejercicio3()
         {
             int p=0;
             Console.WriteLine("Escribe cuantos numeron ingresaras: ");
