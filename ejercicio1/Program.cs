@@ -93,6 +93,27 @@ namespace ejercicio1
             Console.ReadKey();
         }
 
+        static void ejercicio1(string cadena)
+        {
+            if (cadena.Length < 20)
+            {
+                for (int i = 0; i < cadena.Length; i++)
+                {
+                    Console.Write(cadena[i]);
+                }
+                Console.Write("...");
+
+            }
+            else
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    Console.Write(cadena[i]);
+                }
+            }
+            Console.ReadLine();
+        }
+
     }
 
     class Controlmodelo
