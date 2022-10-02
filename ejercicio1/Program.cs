@@ -10,16 +10,25 @@ namespace ejercicio1
     {
         static void Main(string[] args)
         {
+            //ejercicio 1
             Console.WriteLine("Escribe una frase");
             String cadena = Console.ReadLine();
+
+            ejercicio1(cadena);
+            //------------
+        }
+
+
+        static void ejercicio1(string cadena)
+        {
             if (cadena.Length < 20)
             {
-                for (int i=0;i<cadena.Length;i++) 
+                for (int i = 0; i < cadena.Length; i++)
                 {
                     Console.Write(cadena[i]);
                 }
-                    Console.Write("...");
-                
+                Console.Write("...");
+
             }
             else
             {
@@ -30,5 +39,6 @@ namespace ejercicio1
             }
             Console.ReadLine();
         }
+
     }
 }
