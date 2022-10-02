@@ -30,7 +30,7 @@ namespace ejercicio1
         static void ejercicio3()
         {
             int p=0;
-            Console.WriteLine("Escribe cuantos numeron ingresaras: ");
+            Console.WriteLine("Escribe cuantos numeros ingresarás: ");
             int n = Convert.ToInt32(Console.ReadLine());
             int[] arr = new int[n];
             Console.WriteLine("Ingrese los numeros");
@@ -61,7 +61,7 @@ namespace ejercicio1
         static void ejercicio2()
         {
             int n, primero = 0, segundo = 1, siguiente, r = 0;
-            Console.Write("Ingrese numero: ");
+            Console.Write("Ingrese numero de la serie Fibanacci: ");
             n = Convert.ToInt32(Console.ReadLine());
             int i = 0;
             while (segundo <= n)
