@@ -16,6 +16,10 @@ namespace ejercicio1
 
             ejercicio1(cadena);
             //------------
+
+            //ejercicio 2
+            ejercicio2();
+            //-------
         }
 
 
@@ -38,6 +42,41 @@ namespace ejercicio1
                 }
             }
             Console.ReadLine();
+        }
+
+        static void ejercicio2()
+        {
+            int n, primero = 0, segundo = 1, siguiente, r = 0;
+            Console.Write("Ingrese numero: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            int i = 0;
+            while (segundo <= n)
+            {
+
+
+                if (i <= 1)
+                {
+                    siguiente = i;
+                }
+                else
+                {
+                    siguiente = primero + segundo;
+                    primero = segundo;
+                    segundo = siguiente;
+                }
+                if (n == siguiente)
+                {
+                    r = 1;
+                    Console.Write("El numero " + n + " si esta en la serie");
+                }
+                i++;
+            }
+            if (r == 0)
+            {
+                Console.Write("El numero " + n + " no esta en la serie");
+            }
+
+            Console.ReadKey();
         }
 
     }
